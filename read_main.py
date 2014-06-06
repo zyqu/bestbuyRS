@@ -49,9 +49,9 @@ def readCsv(fileName):
     return [catSku,userSku,userCat]
     
 def saveToLocal(catSku,userSku,userCat):
-    saveFile('catSku.dat',catSku)
-    saveFile('usersku.dat',userSku)
-    saveFile('userCat.dat',userCat)
+    saveFile('./data/catSku.dat',catSku)
+    saveFile('./data/usersku.dat',userSku)
+    saveFile('./data/userCat.dat',userCat)
     
 def main():
      [catSku,userSku,userCat] = readCsv('./smalldataset/train.csv')
