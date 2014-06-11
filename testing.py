@@ -37,5 +37,5 @@ with open("./smalldataset/test.csv") as infile:
             if result.get(query)==None:
                 result[query]=[]
             result[query].append((rankNum,sku2))
-        result[query] = sorted(result[query])[0:5]
+        result[query] = sorted(result[query],reverse=True)[0:5]
 open('./smalldataset/result.json','w').write(json.dumps(result))
