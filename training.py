@@ -167,7 +167,7 @@ def training(productdict,predictdict):
 
     		print '%s'%counter
     	
-		resdict={
+    resdict={
 			'name' : np.mean(weightname),
 			'desc' : np.mean(weightdesc),
 			'new'  : np.mean(weightnew),
@@ -188,9 +188,9 @@ def training(productdict,predictdict):
 			'hasmediumImage':np.mean(weighthasmediumImage),
 			'hasthumbnailImage':np.mean(weighthasthumbnailImage),
 			'haslargeImage':np.mean(weighthaslargeImage),
-		}
+    }
+    open('./smalldataset/boolean_prefict.json','w').write(json.dumps(resdict))
 
-		open('./smalldataset/boolean_prefict.json','w').write(json.dumps(resdict))
-
+    
 if __name__ == "__main__":
 	training(productdict,predictdict)

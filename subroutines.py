@@ -6,6 +6,7 @@ Created on Fri Jun 06 13:50:02 2014
 """
 import pickle
 import os
+import re
 def saveFile(fileName,data):
     with open(fileName, 'wb') as f:
         pickle.dump(data,f)
@@ -18,4 +19,12 @@ def readFile(fileName):
         return data
     else:
         raise Exception('the file'+str(fileName)+'does not exist')
-        
+def getString(s):
+    match = re.match(r"([a-zA-Z]+)([\d]+)", s, re.I)
+    if match:
+        items = match.groups()
+        print items
+        return items[0]
+    else:
+        raise Exception('no matching string found')
+    # items is ("foo", "21")

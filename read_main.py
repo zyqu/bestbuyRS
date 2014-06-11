@@ -47,7 +47,7 @@ def readCsv(fileName):
                 userCat[userTemp][catTemp]+=1
             i+=1
     return [catSku,userSku,userCat]
-    
+
 def saveToLocal(catSku,userSku,userCat):
     saveFile('./data/catSku.dat',catSku)
     saveFile('./data/usersku.dat',userSku)
